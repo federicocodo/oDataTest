@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers()
 .AddOData(opt =>
-    opt./*AddRouteComponents(GetEdmModel()).*/Filter().Select().OrderBy().SkipToken().Expand()
+    opt.AddRouteComponents(GetEdmModel()).Filter().Select().OrderBy().SkipToken().Expand()
 );
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
