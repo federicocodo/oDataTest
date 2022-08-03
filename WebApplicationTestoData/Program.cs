@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.OData;
 using Microsoft.OData.Edm;
+using Microsoft.OData.Json;
 using Microsoft.OData.ModelBuilder;
 using WebApplicationTestoData;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddSingleton<DefaultJsonWriterFactory>();
 
 builder.Services.AddControllers()
 .AddOData(opt =>
